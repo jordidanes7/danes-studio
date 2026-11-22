@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>danes.studio · Servicios</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: directo, rápido, de tienda que vende; frases cortas que atacan el dolor
+   IDEA: el corcho de un equipo de e-commerce: creativos reales colgados y precios en post-its
+   PICTURE: abanico de móviles con anuncios reales en bucle (UGC, IA, avatar)
+   COLOUR and TYPE: blanco + tinta casi negra, amarillo post-it como campo dominante, rojo de acento; Archivo 900 + Inter, Caveat para notas
+   LAYOUT: hero a dos bandas, muro de creativos, menú de servicios por categorías, packs, curso de regalo, FAQ, CTA */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#0f0f10);--ink:light-dark(#111113,#f3f1ea);--mute:light-dark(#55555c,#a9a7a0);--line:light-dark(#e7e5df,#2a2a2d);--card:light-dark(#f6f5f1,#18181a);--y:#ffd23f;--yd:#f2c200;--r:#ff4b2b;--note-ink:#1d1b16}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Archivo,Inter,sans-serif;line-height:1.05;text-wrap:balance;margin:0}
+h1{font-weight:900;font-size:clamp(36px,5.6vw,64px);letter-spacing:-.02em}
+h2{font-weight:900;font-size:clamp(30px,4vw,46px);letter-spacing:-.015em}
+h3{font-weight:800;font-size:21px}
+p{margin:0}
+a{color:inherit}
+.band{padding:clamp(36px,5vw,80px) max(5vw,16px)}
+.wrap{max-width:1240px;margin:0 auto}
+html{scroll-padding-top:72px;scroll-behavior:smooth}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 22px;border-radius:12px;font:700 16px Inter,sans-serif;text-decoration:none;border:2px solid var(--ink);white-space:nowrap}
+.btn.pri{background:var(--ink);color:var(--bg)}
+.btn.sec{background:transparent}
+.btn:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--r);outline-offset:3px}
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:20px;padding:12px max(5vw,16px);flex-wrap:wrap}
+.logo{font:900 20px Archivo,sans-serif;text-decoration:none}.logo b{background:var(--y);color:var(--note-ink);padding:0 6px;border-radius:5px;margin-left:2px}
+nav .links{display:flex;gap:18px;margin-left:auto;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-weight:600;font-size:15px;color:var(--mute)}
+nav .links a:hover{color:var(--ink)}
+nav .btn{min-height:42px;padding:0 16px;font-size:15px}
+/* hero */
+.hero{background:var(--y);color:var(--note-ink)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px;align-items:center}
+.hero .lead{font-size:19px;margin:20px 0 28px;max-width:34ch}
+.hero .btn{border-color:var(--note-ink)}
+.hero .btn.pri{background:var(--note-ink);color:#fff}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.hero .tick{display:flex;gap:18px;flex-wrap:wrap;margin-top:26px;font-weight:600;font-size:15px}
+.hero .tick span::before{content:"✓";margin-right:6px;font-weight:900;color:var(--r)}
+.phones{position:relative;height:clamp(400px,46vw,560px)}
+.ph{position:absolute;top:50%;width:clamp(150px,17vw,220px);aspect-ratio:9/16;border-radius:26px;border:7px solid #111;background:#111;overflow:hidden;box-shadow:0 24px 50px -18px rgba(0,0,0,.5)}
+.ph video{width:100%;height:100%;object-fit:cover;display:block}
+.ph .tag{position:absolute;left:8px;bottom:8px;background:#fff;color:#111;font:700 12px Inter;padding:4px 8px;border-radius:999px}
+.ph:nth-child(1){left:4%;transform:translateY(-50%) rotate(-7deg)}
+.ph:nth-child(2){left:50%;transform:translate(-50%,-54%);z-index:2;width:clamp(170px,19vw,245px)}
+.ph:nth-child(3){right:4%;transform:translateY(-50%) rotate(7deg)}
+/* pains */
+.pains{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:32px}
+.pain{border:2px solid var(--ink);border-radius:16px;padding:20px}
+.pain h3{font-size:18px;margin-bottom:8px}
+.pain p{color:var(--mute);font-size:15px}
+.pain .fix{margin-top:12px;font-weight:700;color:var(--ink);font-size:15px}
+.pain .fix::before{content:"→ ";color:var(--r)}
+.kicker{font-weight:700;color:var(--r);margin-bottom:10px;font-size:15px}
+.sub{color:var(--mute);font-size:17px;max-width:60ch;margin-top:12px}
+/* wall */
+.wall{background:#1b1a17;color:#f3f1ea}
+.wall .sub{color:#b9b5aa}
+.grid{display:grid;align-items:start;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:18px;margin-top:32px}
+.pin{position:relative;background:#fff;padding:8px 8px 12px;border-radius:6px;box-shadow:0 14px 30px -14px rgba(0,0,0,.6);color:#111}
+.pin:nth-child(odd){transform:rotate(-1.2deg)}.pin:nth-child(even){transform:rotate(1.1deg)}
+.pin img,.pin video{width:100%;display:block;border-radius:3px;background:#ddd}
+.pin video{aspect-ratio:9/16;object-fit:cover}
+.pin img{aspect-ratio:4/5;object-fit:cover}
+.pin figcaption{font:700 22px/1.1 Caveat,cursive;margin-top:8px}
+.pin .t{display:inline-block;font:700 11px Inter;background:var(--y);color:#111;padding:3px 8px;border-radius:999px;margin-top:4px}
+.pin::before{content:"";position:absolute;top:-9px;left:50%;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:var(--r);box-shadow:inset -3px -3px 0 rgba(0,0,0,.25)}
+.wall .grid{grid-template-columns:repeat(6,minmax(0,1fr))}@media(max-width:980px){.wall .grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:600px){.wall .grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.note-small{font-size:13px;color:#9e9a8f;margin-top:22px}
+/* services */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}
+.tabs button{min-height:44px;padding:0 18px;border-radius:999px;border:2px solid var(--ink);background:transparent;color:var(--ink);font:700 15px Inter;cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--ink);color:var(--bg)}
+.menu{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:18px;margin-top:24px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:12px}
+.svc .top{display:flex;justify-content:space-between;align-items:start;gap:12px}
+.price{background:var(--y);color:var(--note-ink);font:700 28px/1 Caveat,cursive;padding:8px 12px 6px;transform:rotate(3deg);box-shadow:0 6px 12px -6px rgba(0,0,0,.35);white-space:nowrap;flex:none}
+.price small{font:600 12px Inter;display:block;margin-bottom:2px}
+.svc ul{margin:0;padding-left:18px;color:var(--mute);font-size:15px}
+.svc li{margin:3px 0}
+.svc .meta{display:flex;gap:14px;flex-wrap:wrap;font-size:14px;font-weight:600;margin-top:auto;padding-top:8px;border-top:1px dashed var(--line)}
+.svc .meta span{white-space:nowrap}
+.svc a.ask{font-weight:700;font-size:15px;text-decoration:none;color:var(--r)}
+/* packs */
+.packs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:32px;align-items:stretch}
+.pack{border:2px solid var(--ink);border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:14px;background:var(--bg)}
+.pack.hot{background:var(--ink);color:var(--bg)}
+.pack.hot .old,.pack.hot li{color:color-mix(in srgb,var(--bg) 70%,transparent)}
+.pack .amt{font:900 44px/1 Archivo,sans-serif;white-space:nowrap}
+.pack .old{color:var(--mute);font-size:15px}
+.pack .old s{white-space:nowrap}
+.pack ul{margin:0;padding-left:18px;color:var(--mute)}
+.pack .btn{margin-top:auto}
+.pack.hot .btn{background:var(--y);color:var(--note-ink);border-color:var(--y)}
+.badge{align-self:flex-start;background:var(--r);color:#fff;font:700 13px Inter;padding:4px 10px;border-radius:999px}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:32px;counter-reset:s}
+.step{border-top:4px solid var(--ink);padding-top:16px}
+.step b{display:block;font:900 20px Archivo,Inter,sans-serif;margin-bottom:6px}
+.step p{color:var(--mute);font-size:15px}
+/* gift */
+.gift{background:#0b0f1a;color:#eef1f7}
+.gift .wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:48px;align-items:center}
+.gift img{width:100%;max-width:360px;display:block;margin:0 auto;border-radius:10px;box-shadow:0 30px 60px -20px rgba(31,111,255,.55);transform:rotate(-3deg)}
+.gift .sub{color:#aeb6c8}
+.mods{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 22px;margin:22px 0;padding:0;list-style:none}
+.mods li{font-size:15px;border-bottom:1px solid #24304a;padding:8px 0}
+.mods li b{color:#4d8dff;margin-right:8px}
+.gift .btn{border-color:#eef1f7;color:#eef1f7}
+.gift .btn.pri{background:#1f6fff;border-color:#1f6fff;color:#fff}
+/* faq */
+.faq{max-width:820px;margin:28px auto 0}
+details{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;padding:18px 0;font:800 18px Archivo,sans-serif;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:24px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{padding:0 0 18px;color:var(--mute)}
+/* final */
+.final{background:var(--y);color:var(--note-ink);text-align:center}
+.final .sub{color:#3d392d;margin:14px auto 26px}
+.final .btn{border-color:var(--note-ink)}
+.final .btn.pri{background:var(--note-ink);color:#fff}
+.final .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.esc{display:inline-block;margin-top:22px;font:700 26px Caveat,cursive}
+footer{padding:28px max(5vw,16px);font-size:14px;color:var(--mute);border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:980px){.pains{grid-template-columns:repeat(2,minmax(0,1fr))}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.packs{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:760px){.hero .wrap,.gift .wrap{grid-template-columns:minmax(0,1fr)}nav .links{display:none}.phones{height:420px}}
+@media(max-width:600px){.pains,.steps,.mods{grid-template-columns:minmax(0,1fr)}.ph{width:136px}.ph:nth-child(2){width:160px}.ph:nth-child(1){left:0}.ph:nth-child(3){right:0}.hero .lead{font-size:17px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* black friday */
+.bfonly{display:none}
+body.bf .bfonly{display:revert}body.bf .nobf{display:none}
+.bfbar{background:#111;color:#fff;text-align:center;font:700 14px Inter;padding:10px 16px;display:none}
+body.bf .bfbar{display:block}body.bf .bftag{display:inline-block}
+.bfbar b{color:var(--y)}.bfbar .cd{font-variant-numeric:tabular-nums;background:var(--r);padding:2px 8px;border-radius:6px;margin-left:6px;white-space:nowrap}
+.price s,.old s{opacity:.7}
+.bftag{display:inline-block;background:#111;color:var(--y);font:800 13px Inter;padding:5px 12px;border-radius:999px;margin-bottom:14px}
+.acts{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.pay{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:12px;background:var(--ink);color:var(--bg);font:700 15px Inter;text-decoration:none}
+.secure{font-size:12px;color:var(--mute);margin-top:6px}
+</style>
+</head>
+<body>
+
+<div class="bfbar" role="note">🖤 <b>BLACK FRIDAY</b> · −50 % en todos los servicios y packs · hasta el lunes 30 de noviembre <span class="cd" id="cd"></span></div>
+<nav><div class="wrap">
+  <a class="logo" href="#top">danes<b>.studio</b></a>
+  <div class="links"><a href="#trabajo">Trabajo</a><a href="#servicios">Servicios</a><a href="#packs">Packs</a><a href="#mentoria">Mentoría</a><a href="#curso">Curso gratis</a><a href="#faq">Dudas</a></div>
+  <a class="btn pri" href="https://tally.so/r/Yj4POq">Llamada gratis</a>
+</div></nav>
+
+<header class="hero band" id="top"><div class="wrap">
+  <div>
+    <span class="bftag bfonly">🖤 Black Friday: todo a mitad de precio</span>
+    <h1>Lo que no sabes hacer en tu tienda, te lo hacemos nosotros.</h1>
+    <p class="lead">Research de producto, páginas que convierten y anuncios estáticos, UGC e IA hechos para tu marca. Precios de principiante, entrega en días, no en meses.</p>
+    <div class="ctas">
+      <a class="btn pri" href="https://tally.so/r/Yj4POq">Reservar llamada estratégica</a>
+      <a class="btn sec" href="#servicios">Ver precios</a>
+    </div>
+    <div class="tick"><span>1 revisión incluida</span><span>Entrega en días</span><span>Curso de regalo</span></div>
+  </div>
+  <div class="phones" aria-label="Anuncios reales hechos por el equipo">
+    <div class="ph"><video src="vid/ugc2.mp4" autoplay muted loop playsinline></video><span class="tag">UGC</span></div>
+    <div class="ph"><video src="vid/ia_hermana.mp4" autoplay muted loop playsinline></video><span class="tag">Animación IA</span></div>
+    <div class="ph"><video src="vid/avatar2.mp4" autoplay muted loop playsinline></video><span class="tag">Avatar IA</span></div>
+  </div>
+</div></header>
+
+<section class="band"><div class="wrap">
+  <p class="kicker">¿Te suena alguna?</p>
+  <h2>Quieres invertir en tu tienda, pero te atascas siempre en lo mismo.</h2>
+  <div class="pains">
+    <div class="pain"><h3>Semanas buscando producto</h3><p>Miras mil productos y no te decides por ninguno porque no sabes si va a vender.</p><p class="fix">Te damos productos validados con su ángulo</p></div>
+    <div class="pain"><h3>Una web que no convierte</h3><p>Te entran visitas, pero nadie compra y no sabes qué falla.</p><p class="fix">Página de producto construida para vender</p></div>
+    <div class="pain"><h3>Anuncios que nadie para</h3><p>Pagas por anuncios con creativos genéricos que no frenan el scroll.</p><p class="fix">Estáticos y vídeos hechos para tu marca</p></div>
+    <div class="pain"><h3>No sabes editar ni usar IA</h3><p>Ves vídeos UGC e IA de otras marcas y no sabes ni por dónde empezar.</p><p class="fix">Los hacemos nosotros, tú los lanzas</p></div>
+  </div>
+</div></section>
+
+<section class="band wall" id="trabajo"><div class="wrap">
+  <p class="kicker">Trabajo real</p>
+  <h2>Creativos que ya hemos lanzado con dinero de verdad.</h2>
+  <p class="sub">Hechos para tiendas propias que llevamos en Meta Ads. La marca y el producto están ocultos a propósito: lo tuyo tampoco se enseña.</p>
+  <div class="grid">
+    <figure class="pin"><video src="vid/ugc2.mp4" autoplay muted loop playsinline></video><figcaption>Coach que explica</figcaption><span class="t">Vídeo UGC</span></figure>
+    <figure class="pin"><video src="vid/ia_oficina.mp4" autoplay muted loop playsinline></video><figcaption>Figuras 3D en la oficina</figcaption><span class="t">Animación IA</span></figure>
+    <figure class="pin"><video src="vid/avatar2.mp4" autoplay muted loop playsinline></video><figcaption>Doctora con avatar</figcaption><span class="t">Avatar IA</span></figure>
+    <figure class="pin"><video src="vid/ia_hermana.mp4" autoplay muted loop playsinline></video><figcaption>«Hermana vs tú»</figcaption><span class="t">Animación IA</span></figure>
+    <figure class="pin"><img src="img/story.webp" alt="Anuncio estático de historia con testimonio" loading="lazy"><figcaption>Historia de clienta</figcaption><span class="t">Estático</span></figure>
+    <figure class="pin"><video src="vid/ia_5pm.mp4" autoplay muted loop playsinline></video><figcaption>«A las 5 de la tarde»</figcaption><span class="t">Animación IA</span></figure>
+  </div>
+</div></section>
+
+<section class="band" id="servicios"><div class="wrap">
+  <p class="kicker">Servicios y precios</p>
+  <h2>Elige lo que te falta. Pagas solo eso.</h2>
+  <p class="sub"><b class="bfonly" style="color:var(--r)">Black Friday: todos los servicios al 50 % (la mentoría tiene sus propios precios). </b>Todos los precios son por proyecto, sin cuotas. Cada entrega incluye 1 revisión.</p>
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <div class="menu" id="menu"></div>
+</div></section>
+
+<section class="band" id="packs" style="background:var(--card)"><div class="wrap">
+  <p class="kicker">Packs</p>
+  <h2>Si lo quieres todo, sale más barato junto.</h2>
+  <div class="packs">
+    <div class="pack">
+      <h3>Pack Creativos</h3>
+      <div class="amt"><span class="nobf">219 €</span><span class="bfonly">109,50 €</span></div><p class="old"><span class="nobf">Por separado <s>248 €</s></span><span class="bfonly">Antes <s>219 €</s> · −50 % Black Friday</span></p>
+      <ul><li>10 anuncios estáticos</li><li>3 vídeos UGC o IA</li><li>Copys para cada anuncio</li><li>1 revisión</li></ul>
+      <a class="btn sec" data-pay="pack_creativos" href="https://tally.so/r/Yj4POq">Lo quiero</a>
+    </div>
+    <div class="pack hot">
+      <span class="badge">El más pedido</span>
+      <h3>Pack Lanzamiento</h3>
+      <div class="amt"><span class="nobf">699 €</span><span class="bfonly">349,50 €</span></div><p class="old"><span class="nobf">Por separado <s>925 €</s></span><span class="bfonly">Antes <s>699 €</s> · −50 % Black Friday</span></p>
+      <ul><li>Research de producto y de mercado</li><li>Tienda Shopify completa</li><li>10 estáticos y 3 vídeos</li><li>Llamada para lanzar tus primeras campañas</li></ul>
+      <a class="btn" data-pay="pack_lanzamiento" href="https://tally.so/r/Yj4POq">Empezar mi tienda</a>
+    </div>
+    <div class="pack">
+      <h3>Pack Escala</h3>
+      <div class="amt"><span class="nobf">349 €</span><span class="bfonly">174,50 €</span></div><p class="old"><span class="nobf">Por separado <s>416 €</s></span><span class="bfonly">Antes <s>349 €</s> · −50 % Black Friday</span></p>
+      <ul><li>Auditoría de tienda y de Ads Manager</li><li>Nueva página de producto</li><li>Research de 10 ángulos nuevos</li><li>1 revisión</li></ul>
+      <a class="btn sec" data-pay="pack_escala" href="https://tally.so/r/Yj4POq">Quiero escalar</a>
+    </div>
+  </div>
+</div></section>
+
+
+<section class="band" id="mentoria"><div class="wrap">
+  <p class="kicker">Mentoría</p>
+  <span class="bftag bfonly">🖤 Oferta Black Friday: hasta 900 € de ahorro con el plan de 6 meses</span>
+  <h2>Prefieres aprender a hacerlo tú, con alguien al lado.</h2>
+  <p class="sub">Una llamada a la semana para revisar tu tienda, tus anuncios y tus números, y WhatsApp 24/7 para cuando te atasques entre llamadas.</p>
+  <div class="packs">
+    <div class="pack">
+      <h3>1 mes</h3>
+      <div class="amt">400 €<small style="font-size:18px">/mes</small></div><p class="old">Total 400 €</p>
+      <ul><li>4 llamadas 1 a 1 (1 por semana)</li><li>WhatsApp 24/7</li><li>Revisión de tienda, ads y creativos</li><li>Curso Ads Don't Lie de regalo</li></ul>
+      <a class="btn sec" data-pay="ment1" href="https://tally.so/r/Yj4POq">Empezar 1 mes</a>
+    </div>
+    <div class="pack">
+      <h3>3 meses</h3>
+      <div class="amt">350 €<small style="font-size:18px">/mes</small></div><p class="old">Total 1.050 € · ahorras 150 €</p>
+      <ul><li>1 llamada a la semana durante 3 meses</li><li>WhatsApp 24/7</li><li>Revisión de tienda, ads y creativos</li><li>Curso Ads Don't Lie de regalo</li></ul>
+      <a class="btn sec" data-pay="ment3" href="https://tally.so/r/Yj4POq">Empezar 3 meses</a>
+    </div>
+    <div class="pack hot">
+      <span class="badge">Mejor precio</span>
+      <h3>6 meses</h3>
+      <div class="amt">250 €<small style="font-size:18px">/mes</small></div><p class="old">Total 1.500 € · ahorras 900 €</p>
+      <ul><li>1 llamada a la semana durante 6 meses</li><li>WhatsApp 24/7</li><li>Revisión de tienda, ads y creativos</li><li>Curso Ads Don't Lie de regalo</li></ul>
+      <a class="btn" data-pay="ment6" href="https://tally.so/r/Yj4POq">Empezar 6 meses</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <p class="kicker">Cómo funciona</p>
+  <h2>Del «no sé por dónde empezar» a tenerlo listo.</h2>
+  <div class="steps">
+    <div class="step"><b>1. Llamada de 15 min</b><p>Rellenas 4 preguntas y vemos en qué punto estás y qué te falta de verdad.</p></div>
+    <div class="step"><b>2. Te pasamos propuesta</b><p>Servicio, precio cerrado y fecha de entrega. Sin sorpresas.</p></div>
+    <div class="step"><b>3. Lo hacemos</b><p>Investigamos tu mercado y producimos todo con tu marca.</p></div>
+    <div class="step"><b>4. Entrega y revisión</b><p>Lo recibes listo para usar y tienes 1 ronda de cambios incluida.</p></div>
+  </div>
+</div></section>
+
+<section class="band gift" id="curso"><div class="wrap">
+  <img src="img/curso.webp" alt="Portada del curso Ads Don't Lie">
+  <div>
+    <p class="kicker" style="color:#4d8dff">De regalo con cualquier servicio</p>
+    <h2>Curso Ads Don't Lie, gratis.</h2>
+    <p class="sub">46 páginas con el sistema completo para seguir escalando tu tienda por tu cuenta cuando te entreguemos el trabajo.</p>
+    <ul class="mods">
+      <li><b>01</b>Producto y mercado</li><li><b>02</b>Research y ofertas</li>
+      <li><b>03</b>Creativos y storytelling</li><li><b>04</b>Edición e IA de vídeo</li>
+      <li><b>05</b>Testing y optimización</li><li><b>06</b>Páginas de producto</li>
+      <li><b>07</b>Sistema de escalado</li><li><b>08</b>Google, TikTok y Taboola</li>
+    </ul>
+    <a class="btn pri" href="https://tally.so/r/Yj4POq">Quiero el servicio y el curso</a>
+  </div>
+</div></section>
+
+<section class="band" id="faq"><div class="wrap">
+  <h2 style="text-align:center">Dudas rápidas</h2>
+  <div class="faq" id="faqs"></div>
+</div></section>
+
+<section class="band final"><div class="wrap">
+  <h2>Deja de atascarte. Empieza esta semana.</h2>
+  <p class="sub">Llamada estratégica gratis de 15 minutos. Te decimos qué necesitas y qué no, aunque no nos contrates.</p>
+  <div class="ctas">
+    <a class="btn pri" href="https://tally.so/r/Yj4POq">Reservar llamada</a>
+    <a class="btn sec" href="https://www.instagram.com/danes.builds/">Escríbenos en Instagram</a>
+  </div>
+  <p class="esc">o comenta ESCALAR en cualquier reel 👇</p>
+</div></section>
+
+<footer><div class="wrap"><span>danes.studio · un proyecto de @danes.builds</span><span>Tiendas, páginas, research y creativos para e-commerce en español</span></div></footer>
+
+<script>
+{
+const S={
+ "Research":[
+  {k:"producto",n:"Producto ganador",p:"79 €",d:"3 productos validados con demanda real, márgenes y proveedor.",l:["Análisis de competencia y anuncios activos","Coste, precio de venta y margen","El ángulo con el que lanzar cada uno"],t:"3 días"},
+  {k:"angulos",n:"Mercado y ángulos",p:"99 €",d:"Para el producto que ya tienes.",l:["Avatar, dolores y deseos sacados de reviews reales","10 ángulos y 20 hooks listos para probar","Qué ofertas usa tu competencia"],t:"4 días"},
+  {k:"mercado",n:"Mercado nuevo",p:"99 €",d:"¿Llevas tu producto a otro país? Lo estudiamos antes de que gastes.",l:["Competencia y precios del país","Adaptación del idioma y la oferta","Riesgos de logística y pagos"],t:"4 días"}],
+ "Creativos":[
+  {k:"estaticos",n:"10 anuncios estáticos",p:"99 €",d:"Formatos que funcionan hoy: notas, post-it, memes, comparativas y ofertas.",l:["Con tu producto y tu marca","Copy y titular de cada anuncio","Tamaños para feed y stories"],t:"3 días"},
+  {k:"videos",n:"3 vídeos UGC o IA",p:"149 €",d:"Vídeos a medida para tu producto, no plantillas recicladas.",l:["UGC, animación IA o avatar IA","Guion con hook, problema y oferta","Subtítulos y versión de 9:16"],t:"5 días"},
+  {k:"guiones",n:"Guiones de anuncios",p:"59 €",d:"Si los grabas tú, te escribimos qué decir.",l:["5 guiones completos","3 hooks por guion","Indicaciones de plano y b-roll"],t:"2 días"}],
+ "Webs":[
+  {k:"pdp",n:"Página de producto",p:"199 €",d:"Estructura pensada para convertir tráfico frío de anuncios.",l:["Copy, imágenes y secciones de confianza","Oferta y bundles para subir el ticket medio","Optimizada para móvil"],t:"5 días"},
+  {k:"landing",n:"Landing o advertorial",p:"249 €",d:"Página previa para anuncios que necesitan explicar antes de vender.",l:["Historia, mecanismo y prueba","Enlazada a tu página de producto","Versión para Meta y TikTok"],t:"5 días"},
+  {k:"tienda",n:"Tienda Shopify completa",p:"499 €",d:"Tu tienda lista para vender, de cero.",l:["Diseño, páginas legales y de contacto","Página de producto incluida","Pagos, envíos y apps clave configurados"],t:"7 días"}],
+ "Auditorías":[
+  {k:"revtienda",n:"Revisión de tienda",p:"49 €",d:"Te grabamos un vídeo revisando tu tienda punto por punto.",l:["Qué está frenando tus ventas","Cambios ordenados por impacto","Ejemplos de tiendas que lo hacen bien"],t:"48 h"},
+  {k:"revads",n:"Revisión de Ads Manager",p:"69 €",d:"Miramos tus campañas y te decimos qué apagar, qué escalar y qué probar.",l:["Estructura de campañas y presupuesto","Lectura de métricas","Plan de testing para las próximas 2 semanas"],t:"48 h"},
+  {k:"",n:"Mentoría mensual",p:"250 €/mes",d:"Para quien quiere aprender a hacerlo con alguien al lado. Ver planes abajo.",l:["1 llamada a la semana","WhatsApp 24/7","Revisión de tu tienda, ads y creativos"],t:"Planes de 1, 3 o 6 meses"}]
+};
+const tabs=document.getElementById('tabs'),menu=document.getElementById('menu');
+const keys=Object.keys(S);
+// Enlaces de pago de Stripe (se rellenan al crearlos). Vacío = sin botón de pago.
+const PAY={producto:"https://buy.stripe.com/4gM5kx4th8TG85u0ij2ZO00",angulos:"https://buy.stripe.com/dRmaER4thee0fxW0ij2ZO01",mercado:"https://buy.stripe.com/14AaER7Ft1refxW2qr2ZO02",estaticos:"https://buy.stripe.com/fZu9AN4th5Hu2La1mn2ZO03",videos:"https://buy.stripe.com/6oU28l6Bpfi43Pe8OP2ZO04",guiones:"https://buy.stripe.com/aFa6oBaRFc5SdpO2qr2ZO05",pdp:"https://buy.stripe.com/bJe3cp6Bp5Hu85u5CD2ZO06",landing:"https://buy.stripe.com/bJebIV9NBee02La2qr2ZO07",tienda:"https://buy.stripe.com/6oUdR30d16Ly4Ti8OP2ZO08",revtienda:"https://buy.stripe.com/7sY6oB4th1re5Xm0ij2ZO09",revads:"https://buy.stripe.com/14A3cpbVJgm8dpOaWX2ZO0a",pack_creativos:"https://buy.stripe.com/14AaERcZN8TG3Pe0ij2ZO0b",pack_lanzamiento:"https://buy.stripe.com/5kQ4gt6Bp2vi99y8OP2ZO0c",pack_escala:"https://buy.stripe.com/bJebIV0d15HuclK2qr2ZO0d",ment1:"https://buy.stripe.com/7sYbIV9NBb1O71q5CD2ZO0e",ment3:"https://buy.stripe.com/7sY5kx6Bpee03Pec112ZO0f",ment6:"https://buy.stripe.com/4gMdR32l96LygC02qr2ZO0g"};
+const PROMO="BLACKFRIDAY";
+function payUrl(k){const u=PAY[k];if(!u)return "";return (BF&&!/^ment/.test(k))?u+(u.includes('?')?'&':'?')+'prefilled_promo_code='+PROMO:u}
+function payBtn(k){const u=payUrl(k);return u?`<a class="pay" href="${u}" target="_blank" rel="noopener">Pagar ahora →</a>`:''}
+const END=new Date('2026-11-30T23:59:59+01:00').getTime();
+const BF=Date.now()<END;
+if(BF)document.body.classList.add('bf');
+function half(p){const n=parseFloat(p)/2;return (Number.isInteger(n)?n:n.toFixed(2).replace('.',','))+' €'}
+function price(s){if(!BF||/mes/.test(s.p))return s.p;return '<small><s>'+s.p+'</s> −50 %</small>'+half(s.p)}
+const cd=document.getElementById('cd');
+function tick(){const t=END-Date.now();if(t<=0){location.reload();return}const d=Math.floor(t/864e5),hh=Math.floor(t/36e5)%24,m=Math.floor(t/6e4)%60;cd.textContent=(d?d+'d ':'')+hh+'h '+String(m).padStart(2,'0')+'m'}
+if(BF){tick();setInterval(tick,30000)}
+function show(k){
+ tabs.querySelectorAll('button').forEach(b=>b.setAttribute('aria-selected',b.dataset.k===k));
+ menu.innerHTML=S[k].map(s=>`<article class="svc"><div class="top"><h3>${s.n}</h3><div class="price">${price(s)}</div></div><p>${s.d}</p><ul>${s.l.map(x=>`<li>${x}</li>`).join('')}</ul><div class="meta"><span>⏱ ${s.t}</span><span>↺ 1 revisión</span></div><div class="acts">${payBtn(s.k)}<a class="ask" href="https://tally.so/r/Yj4POq">Pedir info →</a></div></article>`).join('');
+}
+tabs.innerHTML=keys.map(k=>`<button role="tab" data-k="${k}">${k}</button>`).join('');
+tabs.addEventListener('click',e=>{const b=e.target.closest('button');if(b)show(b.dataset.k)});
+show(keys[0]);
+document.querySelectorAll('[data-pay]').forEach(a=>{const u=payUrl(a.dataset.pay);if(u){a.href=u;a.target='_blank';a.rel='noopener';a.insertAdjacentHTML('afterend','<p class="secure">Pago seguro con Stripe · tarjeta, Apple Pay y Google Pay</p>')}});
+const F=[
+ ["¿Para quién es esto?","Para quien empieza o ya vende un poco y quiere invertir en su tienda, pero no sabe o no tiene tiempo de hacer research, páginas o creativos."],
+ ["¿Qué incluye la revisión?","Una ronda de cambios sobre lo entregado: textos, colores, orden, hooks o escenas. Si quieres más rondas, lo hablamos."],
+ ["¿Cuánto tardáis?","Entre 48 horas y 7 días según el servicio. Lo ves en cada tarjeta y te lo confirmamos en la propuesta."],
+ ["¿Me garantizáis ventas?","No. Nadie honesto puede. Te garantizamos trabajo hecho con lo que nos funciona en nuestras propias tiendas, entregado a tiempo."],
+ ["¿Cómo recibo el curso?","Te lo enviamos con la primera entrega de cualquier servicio."],
+ ["¿Trabajáis con tiendas fuera de España?","Sí, con todo el mercado hispano: España, México y Latinoamérica."]];
+document.getElementById('faqs').innerHTML=F.map(([q,a])=>`<details><summary>${q}</summary><p>${a}</p></details>`).join('');
+}
+</script>
+</body>
+</html>
