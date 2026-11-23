@@ -149,6 +149,18 @@ body.bf .bfbar{display:block}body.bf .bftag{display:inline-block}
 .acts{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .pay{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:12px;background:var(--ink);color:var(--bg);font:700 15px Inter;text-decoration:none}
 .secure{font-size:12px;color:var(--mute);margin-top:6px}
+/* resultados */
+.proofstats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:28px}
+.ps{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+.ps b{display:block;font:900 clamp(26px,3vw,36px)/1 Archivo,Inter,sans-serif;letter-spacing:-.01em}
+.ps span{display:block;color:var(--mute);font-size:14px;margin-top:6px}
+.shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:22px;align-items:start}
+.shot{margin:0;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:10px 10px 14px}
+.shot img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--line);background:#fff}
+.shot figcaption{font-size:14px;font-weight:600;margin-top:10px}
+.shot.wide{grid-column:1/-1}
+.disc{font-size:13px;color:var(--mute);margin-top:18px;max-width:80ch}
+@media(max-width:980px){.proofstats{grid-template-columns:repeat(2,minmax(0,1fr))}.shots{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
@@ -156,7 +168,7 @@ body.bf .bfbar{display:block}body.bf .bftag{display:inline-block}
 <div class="bfbar" role="note">🖤 <b>BLACK FRIDAY</b> · −50 % en todos los servicios y packs · hasta el lunes 30 de noviembre <span class="cd" id="cd"></span></div>
 <nav><div class="wrap">
   <a class="logo" href="#top">danes<b>.studio</b></a>
-  <div class="links"><a href="#trabajo">Trabajo</a><a href="#servicios">Servicios</a><a href="#packs">Packs</a><a href="#mentoria">Mentoría</a><a href="#curso">Curso gratis</a><a href="#faq">Dudas</a></div>
+  <div class="links"><a href="#trabajo">Trabajo</a><a href="#resultados">Resultados</a><a href="#servicios">Servicios</a><a href="#packs">Packs</a><a href="#mentoria">Mentoría</a><a href="#curso">Curso gratis</a><a href="#faq">Dudas</a></div>
   <a class="btn pri" href="https://tally.so/r/Yj4POq">Llamada gratis</a>
 </div></nav>
 
@@ -201,6 +213,25 @@ body.bf .bfbar{display:block}body.bf .bftag{display:inline-block}
     <figure class="pin"><img src="img/story.webp" alt="Anuncio estático de historia con testimonio" loading="lazy"><figcaption>Historia de clienta</figcaption><span class="t">Estático</span></figure>
     <figure class="pin"><video src="vid/ia_5pm.mp4" autoplay muted loop playsinline></video><figcaption>«A las 5 de la tarde»</figcaption><span class="t">Animación IA</span></figure>
   </div>
+</div></section>
+
+<section class="band" id="resultados"><div class="wrap">
+  <p class="kicker">Resultados reales</p>
+  <h2>Tiendas de alumnos de la mentoría, con capturas de Shopify.</h2>
+  <p class="sub">Sin trucos ni montajes: capturas tal cual de sus paneles de Shopify. El nombre de cada tienda está tapado por privacidad.</p>
+  <div class="proofstats">
+    <div class="ps"><b>35.561 $</b><span>vendidos en 30 días</span></div>
+    <div class="ps"><b>906</b><span>pedidos en 30 días</span></div>
+    <div class="ps"><b>6.229 $</b><span>vendidos en un solo día</span></div>
+    <div class="ps"><b>0 → 5.000 €</b><span>al mes, de abril a octubre</span></div>
+  </div>
+  <div class="shots">
+    <figure class="shot wide"><img src="img/res_10meses.webp" width="1400" height="378" alt="Panel de Shopify: 23.725,99 € en ventas brutas y 363 pedidos, creciendo de abril a octubre" loading="lazy"><figcaption>De 0 € en abril a unos 5.000 € al mes en octubre · 363 pedidos</figcaption></figure>
+    <figure class="shot"><img src="img/res_30dias.webp" width="700" height="498" alt="Panel de Shopify: 35.561,49 $ en ventas y 906 pedidos en los últimos 30 días" loading="lazy"><figcaption>35.561 $ y 906 pedidos en 30 días</figcaption></figure>
+    <figure class="shot"><img src="img/res_dia.webp" width="700" height="498" alt="Panel de Shopify: 6.229,03 $ en ventas y 157 pedidos en un día" loading="lazy"><figcaption>6.229 $ y 157 pedidos en un día</figcaption></figure>
+    <figure class="shot"><img src="img/res_directo.webp" width="700" height="664" alt="Vista en tiempo real de Shopify: 13 pedidos y carritos activos" loading="lazy"><figcaption>En directo: carritos activos y compras entrando</figcaption></figure>
+  </div>
+  <p class="disc">Las cifras son ventas (facturación), no beneficio, y dependen de cada producto, mercado e inversión en anuncios. No garantizamos resultados concretos.</p>
 </div></section>
 
 <section class="band" id="servicios"><div class="wrap">
