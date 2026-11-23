@@ -161,6 +161,25 @@ body.bf .bfbar{display:block}body.bf .bftag{display:inline-block}
 .shot.wide{grid-column:1/-1}
 .disc{font-size:13px;color:var(--mute);margin-top:18px;max-width:80ch}
 @media(max-width:980px){.proofstats{grid-template-columns:repeat(2,minmax(0,1fr))}.shots{grid-template-columns:minmax(0,1fr)}}
+/* mentoria sistema */
+.claim{margin-top:22px;border-left:6px solid var(--y);background:var(--card);border-radius:0 16px 16px 0;padding:18px 22px;font-size:17px;max-width:70ch}
+.claim b{font-weight:800}
+.road{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:30px;counter-reset:f}
+.ph5{position:relative;border:2px solid var(--ink);border-radius:18px;padding:18px 16px 16px;display:flex;flex-direction:column;gap:8px;background:var(--bg)}
+.ph5 .n{font:900 13px Inter;letter-spacing:.06em;color:var(--r)}
+.ph5 h3{font-size:18px}
+.ph5 .goal{display:inline-block;align-self:flex-start;background:var(--y);color:var(--note-ink);font:800 13px Inter;padding:3px 10px;border-radius:999px}
+.ph5 ul{margin:2px 0 0;padding-left:17px;color:var(--mute);font-size:14.5px}
+.ph5 li{margin:3px 0}
+.ph5.top{background:var(--ink);color:var(--bg)}.ph5.top ul{color:color-mix(in srgb,var(--bg) 72%,transparent)}
+.kit{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr));gap:14px;margin-top:22px}
+.tool{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;gap:14px;align-items:flex-start}
+.tool .ic{flex:none;width:42px;height:42px;border-radius:12px;background:var(--y);color:var(--note-ink);display:grid;place-items:center;font:900 15px Archivo,Inter,sans-serif}
+.tool h3{font-size:16.5px;margin-bottom:4px}
+.tool p{color:var(--mute);font-size:14.5px}
+.mh{margin-top:44px;font:900 clamp(22px,2.6vw,30px)/1.1 Archivo,Inter,sans-serif}
+@media(max-width:1100px){.road{grid-template-columns:repeat(2,minmax(0,1fr))}.ph5.top{grid-column:1/-1}}
+@media(max-width:600px){.road{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
@@ -272,26 +291,59 @@ body.bf .bfbar{display:block}body.bf .bftag{display:inline-block}
 <section class="band" id="mentoria"><div class="wrap">
   <p class="kicker">Mentoría</p>
   <span class="bftag bfonly">🖤 Oferta Black Friday: hasta 900 € de ahorro con el plan de 6 meses</span>
-  <h2>Prefieres aprender a hacerlo tú, con alguien al lado.</h2>
+  <h2>Aprende a escalar tu tienda de 0 a 1.000 €/día, con alguien al lado.</h2>
   <p class="sub">Una llamada a la semana para revisar tu tienda, tus anuncios y tus números, y WhatsApp 24/7 para cuando te atasques entre llamadas.</p>
+  <div class="claim">Invertí <b>más de 25.000 € en formaciones</b> de e-commerce, Meta Ads y copywriting. Me quedé solo con lo que funciona y lo convertí en <b>mi sistema paso a paso</b>, con mis plantillas. En la mentoría te lo doy todo y lo aplicamos juntos en tu tienda.</div>
+
+  <p class="mh">El camino de 0 a 1.000 €/día</p>
+  <p class="sub">5 fases, en orden. No pasas a la siguiente hasta que los números de la anterior cuadran.</p>
+  <div class="road">
+    <div class="ph5"><span class="n">FASE 1</span><h3>Producto y mercado</h3><span class="goal">Elegir bien</span>
+      <ul><li>Encontrar productos con demanda real</li><li>Analizar competencia, tráfico y anuncios activos</li><li>Calcular coste, precio y ROAS de equilibrio antes de gastar</li><li>Avatar, nivel de consciencia, objeciones y USP</li></ul></div>
+    <div class="ph5"><span class="n">FASE 2</span><h3>Estrategia creativa</h3><span class="goal">Ángulos que venden</span>
+      <ul><li>Sacar los deseos masivos de tu mercado</li><li>Convertir cada deseo en ángulos para testear</li><li>Copywriting de respuesta directa: ganchos, bullets y guiones</li><li>VSL de 2–3 minutos con estructura de 7 pasos</li></ul></div>
+    <div class="ph5"><span class="n">FASE 3</span><h3>Página que convierte</h3><span class="goal">Primeras ventas</span>
+      <ul><li>Página de producto alineada con el ángulo del anuncio</li><li>Oferta, bundles y garantía que suben el ticket medio</li><li>Revisión completa antes de meter dinero</li></ul></div>
+    <div class="ph5"><span class="n">FASE 4</span><h3>Testing en Meta</h3><span class="goal">Encontrar ganadores</span>
+      <ul><li>Lanzar tandas de creativos con nombres ordenados</li><li>Leer hook rate, hold rate, CTR, CPA y ROAS</li><li>Cuándo matar, cuándo iterar y cuándo validar</li><li>Apuntar cada aprendizaje para no repetir errores</li></ul></div>
+    <div class="ph5 top"><span class="n">FASE 5</span><h3>Escalar a 1.000 €/día</h3><span class="goal">Escala rentable</span>
+      <ul><li>Subir presupuesto sin romper el CPA</li><li>Nuevos ángulos y mercados para el producto ganador</li><li>Control diario de beneficio real, no solo facturación</li><li>KPIs de equilibrio y KPIs objetivo siempre a la vista</li></ul></div>
+  </div>
+
+  <p class="mh">Lo que te llevas</p>
+  <p class="sub">Mis plantillas y documentos de trabajo, los mismos que uso en mis tiendas. Te los explico en las llamadas y los rellenamos con tus datos.</p>
+  <div class="kit">
+    <div class="tool"><span class="ic">01</span><div><h3>Plantilla de research de producto</h3><p>Coste, precio, ROAS de equilibrio, competencia, tráfico y anuncios activos de cada candidato, más la estrategia de avatar y objeciones.</p></div></div>
+    <div class="tool"><span class="ic">02</span><div><h3>Estrategia creativa por deseo masivo</h3><p>De cada deseo masivo salen tus ángulos. Los testeas 5 días y la hoja te dice cuál escalar.</p></div></div>
+    <div class="tool"><span class="ic">03</span><div><h3>Prompts de análisis de mercado</h3><p>Prompts de IA para sacar deseos, miedos y lenguaje real de tu cliente en minutos.</p></div></div>
+    <div class="tool"><span class="ic">04</span><div><h3>Prompt maestro de VSL</h3><p>Tu guionista de IA: VSL de 2–3 minutos con estructura de 7 pasos, en lenguaje natural.</p></div></div>
+    <div class="tool"><span class="ic">05</span><div><h3>Hoja de KPIs y planificación creativa</h3><p>Benchmarks de testing y escalado, métricas de cada anuncio, audiencias y ángulos, planificación de tandas y guiones.</p></div></div>
+    <div class="tool"><span class="ic">06</span><div><h3>Tracking diario de beneficio</h3><p>Coste de producto, gasto en anuncios y beneficio de cada día, con tus KPIs de equilibrio y objetivo.</p></div></div>
+    <div class="tool"><span class="ic">07</span><div><h3>Learnings y conclusiones</h3><p>Dónde apuntar qué ha funcionado, qué no y tus teorías por campaña. Así cada test te hace mejor.</p></div></div>
+    <div class="tool"><span class="ic">08</span><div><h3>Swipe de estáticos ganadores</h3><p>Anuncios estáticos que ya han funcionado, para inspirarte y adaptarlos a tu producto.</p></div></div>
+  </div>
+  <p class="disc">1.000 €/día es el objetivo del sistema, no una garantía: depende de tu producto, tu mercado, tu inversión y de que apliques el trabajo cada semana.</p>
+
+  <p class="mh">Elige tu plan</p>
+
   <div class="packs">
     <div class="pack">
       <h3>1 mes</h3>
       <div class="amt">400 €<small style="font-size:18px">/mes</small></div><p class="old">Total 400 €</p>
-      <ul><li>4 llamadas 1 a 1 (1 por semana)</li><li>WhatsApp 24/7</li><li>Revisión de tienda, ads y creativos</li><li>Curso Ads Don't Lie de regalo</li></ul>
+      <ul><li>4 llamadas 1 a 1 (1 por semana)</li><li>WhatsApp 24/7</li><li>Revisión de tienda, ads y creativos</li><li>Sistema de 0 a 1.000 €/día + 8 plantillas</li><li>Curso Ads Don't Lie de regalo</li></ul>
       <a class="btn sec" data-pay="ment1" href="https://tally.so/r/Yj4POq">Empezar 1 mes</a>
     </div>
     <div class="pack">
       <h3>3 meses</h3>
       <div class="amt">350 €<small style="font-size:18px">/mes</small></div><p class="old">Total 1.050 € · ahorras 150 €</p>
-      <ul><li>1 llamada a la semana durante 3 meses</li><li>WhatsApp 24/7</li><li>Revisión de tienda, ads y creativos</li><li>Curso Ads Don't Lie de regalo</li></ul>
+      <ul><li>1 llamada a la semana durante 3 meses</li><li>WhatsApp 24/7</li><li>Revisión de tienda, ads y creativos</li><li>Sistema de 0 a 1.000 €/día + 8 plantillas</li><li>Curso Ads Don't Lie de regalo</li></ul>
       <a class="btn sec" data-pay="ment3" href="https://tally.so/r/Yj4POq">Empezar 3 meses</a>
     </div>
     <div class="pack hot">
       <span class="badge">Mejor precio</span>
       <h3>6 meses</h3>
       <div class="amt">250 €<small style="font-size:18px">/mes</small></div><p class="old">Total 1.500 € · ahorras 900 €</p>
-      <ul><li>1 llamada a la semana durante 6 meses</li><li>WhatsApp 24/7</li><li>Revisión de tienda, ads y creativos</li><li>Curso Ads Don't Lie de regalo</li></ul>
+      <ul><li>1 llamada a la semana durante 6 meses</li><li>WhatsApp 24/7</li><li>Revisión de tienda, ads y creativos</li><li>Sistema de 0 a 1.000 €/día + 8 plantillas</li><li>Curso Ads Don't Lie de regalo</li></ul>
       <a class="btn" data-pay="ment6" href="https://tally.so/r/Yj4POq">Empezar 6 meses</a>
     </div>
   </div>
